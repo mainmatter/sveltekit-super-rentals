@@ -44,3 +44,17 @@ test('visiting /getting-in-touch', async ({ page }) => {
 	// assert that we are on the correct page
 	await expect(page).toHaveURL('/about');
 });
+
+test('navigating using the nav-bar', async ({ page }) => {
+	// Go to the index route
+	await page.goto('/');
+	// Click nav >> text=About
+	await page.locator('nav >> text=About').click();
+	await expect(page).toHaveURL('/about');
+	// Click nav >> text=Contact
+	await page.locator('nav >> text=Contact').click();
+	await expect(page).toHaveURL('/getting-in-touch');
+	// Click h1:has-text("SuperRentals")
+	await page.locator('h1:has-text("SuperRentals")').click();
+	await expect(page).toHaveURL('/');
+});

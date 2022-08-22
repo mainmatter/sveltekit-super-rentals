@@ -1,5 +1,8 @@
-<div class="jumbo">
-	<div class="right tomster" />
+<script>
+	import Jumbo from '@components/jumbo.svelte'
+</script>
+
+<Jumbo>
 	<h2>Contact Us</h2>
 	<p>
 		Super Rentals Representatives would love to help you<br />
@@ -15,4 +18,4 @@
 		<a href="mailto:superrentalsrep@sveltedemo.com">superrentalsrep@sveltedemo.com</a>
 	</address>
 	<a href="/about" class="button">About</a>
-</div>
+</Jumbo>

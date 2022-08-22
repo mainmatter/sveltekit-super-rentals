@@ -18,3 +18,12 @@
 ## Part 1.3: Automated testing
 
 - Update the `tests/test.js` file to align with the usage in our app
+
+## Part 1.4: Component basics
+
+- Add a new `+layout.svelte` route to handle the global navigation bar
+- Add the new `nav-bar.svelte` component
+- Add the new `jumbo.svelte` component
+- Add `@components` to the aliases in the `svelte.config.js`
+- Update the routes to use the `Jumbo` component
+- Add a new test to make sure the `nav-bar` component is functioning as expected

@@ -1,9 +1,12 @@
-<div class="jumbo">
-	<div class="right tomster" />
+<script>
+	import Jumbo from '@components/jumbo.svelte'
+</script>
+
+<Jumbo>
 	<h2>About Super Rentals</h2>
 	<p>
 		The Super Rentals website is a delightful project created to explore Ember. By building a
 		property rental site, we can simultaneously imagine traveling AND building Ember applications.
 	</p>
 	<a href="/getting-in-touch" class="button">Contact Us</a>
-</div>
+</Jumbo>
