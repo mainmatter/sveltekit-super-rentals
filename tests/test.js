@@ -1,6 +1,46 @@
 import { expect, test } from '@playwright/test';
 
-test('index page has expected h1', async ({ page }) => {
+test('visiting /', async ({ page }) => {
+	// go to the index route
 	await page.goto('/');
-	expect(await page.textContent('h1')).toBe('Welcome to SvelteKit');
+	// assert we are on the correct page
+	expect(page).toHaveURL('/');
+	// assert the title of the page is correct
+	expect(await page.textContent('h2')).toBe('Welcome to Super Rentals!');
+	// assert the text on the link is correct
+	expect(await page.textContent('.jumbo a.button')).toBe('About Us');
+	// click on the link to take us to the `about` page
+	await page.locator('.jumbo a.button').click();
+	// assert that we are on the correct page
+	await expect(page).toHaveURL('/about');
+});
+
+test('visiting /about', async ({ page }) => {
+	// go to the about route
+	await page.goto('/about');
+	// assert we are on the correct page
+	expect(page).toHaveURL('/about');
+	// assert the title of the page is correct
+	expect(await page.textContent('h2')).toBe('About Super Rentals');
+	// assert the text on the link is correct
+	expect(await page.textContent('.jumbo a.button')).toBe('Contact Us');
+	// click on the link to take us to the `getting-in-touch` page
+	await page.locator('.jumbo a.button').click();
+	// assert that we are on the correct page
+	await expect(page).toHaveURL('/getting-in-touch');
+});
+
+test('visiting /getting-in-touch', async ({ page }) => {
+	// go to the getting-in-touch route
+	await page.goto('/getting-in-touch');
+	// assert we are on the correct page
+	expect(page).toHaveURL('/getting-in-touch');
+	// assert the title of the page is correct
+	expect(await page.textContent('h2')).toBe('Contact Us');
+	// assert the text on the link is correct
+	expect(await page.textContent('.jumbo a.button')).toBe('About');
+	// click on the link to take us to the `about` page
+	await page.locator('.jumbo a.button').click();
+	// assert that we are on the correct page
+	await expect(page).toHaveURL('/about');
 });

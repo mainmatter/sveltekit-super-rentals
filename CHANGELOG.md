@@ -14,3 +14,7 @@
 - Create a new page for `about`
 - Create a new page for `getting-in-touch`
 - Add links between the pages
+
+## Part 1.3: Automated testing
+
+- Update the `tests/test.js` file to align with the usage in our app
