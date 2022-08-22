@@ -8,3 +8,9 @@
 - Add welcome message to routes/+page.svelte
 - Add the `alias` attribute to the `svelte.config.js` file to make importing files easier
 - Specify routes in the `vite.config.js` and `playwright.config.js` files to allow for easier development and testing
+
+## Part 1.2: Building pages
+
+- Create a new page for `about`
+- Create a new page for `getting-in-touch`
+- Add links between the pages
