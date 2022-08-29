@@ -63,3 +63,7 @@
 - Create new `ShareButton` component to handle the sharing URL
 - Update the `rentals/[slug]` route to use the new `ShareButton` component
 - Update the tests to make sure the share button is working as expected
+
+## Part 2.3: Ember Data
+
+- Because we are not using Ember Data, this part of the tutorial is skipped completely
