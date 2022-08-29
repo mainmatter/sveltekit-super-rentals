@@ -1,8 +1,11 @@
 <script>
   import Jumbo from '@components/jumbo.svelte';
 	import Rental from '@components/rental/index.svelte';
+	import RentalsFilter from '@components/rentals-filter.svelte';
 
 	export let data;
+	
+	let query = '';
 </script>
 
 <Jumbo>
@@ -12,9 +15,16 @@
 </Jumbo>
 
 <div class="rentals">
-	<ul class="results">
-		{#each data.rentals as rental}
-			<li><Rental {rental} /></li>
-		{/each}
-	</ul>
+	<label>
+		<span>Where would you like to stay?</span>
+		<input class="light" bind:value={query} />
+	</label>
+
+	<RentalsFilter {query} rentals={data.rentals} let:results>
+		<ul class="results">
+			{#each results as rental}
+				<li><Rental {rental} /></li>
+			{/each}
+		</ul>
+	</RentalsFilter>
 </div>

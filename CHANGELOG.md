@@ -67,3 +67,9 @@
 ## Part 2.3: Ember Data
 
 - Because we are not using Ember Data, this part of the tutorial is skipped completely
+
+## Part 2.4: Provider components
+
+- Add a text input to the index page to allow users to search for a property,
+- Create the new `RentalsFilter` component,
+- Update the index page to use the new `RentalsFilter` component to handle the filtering of the properties

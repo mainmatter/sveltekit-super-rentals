@@ -96,3 +96,49 @@ test('visiting /rentals/grand-old-mansion', async ({ page }) => {
 	// Assert the rental detail area is visible
 	await expect(page.locator('.rental.detailed')).toBeVisible();
 });
+
+test('the index page renders all given rental properties by default', async ({ page }) => {
+	// Go to the index page
+	await page.goto('/');
+	// Assert we are on the current URL
+	await expect(page).toHaveURL('/');
+
+	// assert all rentals are loaded correctly
+	expect(page.locator('.rentals')).toBeVisible();
+	expect(page.locator('.rentals input')).toBeVisible();
+	expect(page.locator('.rentals .results')).toBeVisible();
+	expect(page.locator('.rentals .results li')).toHaveCount(3);
+
+	expect(await page.textContent('.rentals .results li:nth-of-type(1) h3')).toBe(
+		'Grand Old Mansion'
+	);
+	expect(await page.textContent('.rentals .results li:nth-of-type(2) h3')).toBe('Urban Living');
+	expect(await page.textContent('.rentals .results li:nth-of-type(3) h3')).toBe('Downtown Charm');
+});
+
+test('the index page updates the results according to the search query', async ({ page }) => {
+	// Go to the index page
+	await page.goto('/');
+	// Assert we are on the current URL
+	await expect(page).toHaveURL('/');
+
+	// assert all rentals are loaded correctly
+	expect(page.locator('.rentals')).toBeVisible();
+	expect(page.locator('.rentals input')).toBeVisible();
+	expect(page.locator('.rentals .results')).toBeVisible();
+	expect(page.locator('.rentals .results li')).toHaveCount(3);
+
+	// Fill input
+	await page.locator('input').fill('Mansion');
+
+	// assert that there is only one result and that it's title includes the word "mansion"
+	expect(page.locator('.rentals .results li')).toHaveCount(1);
+	expect(await page.textContent('.rentals .results li h3')).toBe('Grand Old Mansion');
+
+	// Fill input with new search term
+	await page.locator('input').fill('DownTown');
+
+	// assert that there is only one result and that it's title includes the word "downtown"
+	expect(page.locator('.rentals .results li')).toHaveCount(1);
+	expect(await page.textContent('.rentals .results li h3')).toBe('Downtown Charm');
+});
