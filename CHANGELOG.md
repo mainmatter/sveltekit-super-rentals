@@ -57,3 +57,9 @@
 - Update the `Map` component to accept a `styleClass`
 - Fetch the data for the specific rental inside the `rental/[slug]` route
 - Add tests to check the new functionality
+
+## Part 2.2: Service injection
+
+- Create new `ShareButton` component to handle the sharing URL
+- Update the `rentals/[slug]` route to use the new `ShareButton` component
+- Update the tests to make sure the share button is working as expected

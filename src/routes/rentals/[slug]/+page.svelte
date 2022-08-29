@@ -2,6 +2,7 @@
 	import Jumbo from '@components/jumbo.svelte';
 	import Map from '@components/map.svelte';
 	import RentalImage from '@components/rental/image.svelte';
+  import ShareButton from '@components/share-button.svelte'
 </script>
 
 <script>
@@ -12,9 +13,13 @@
 <Jumbo>
   <h2>{rental.title}</h2>
   <p>Nice find! This looks like a nice place to stay near {rental.city}.</p>
-  <a href="#" target="_blank" rel="external nofollow noopener noreferrer" class="share button">
-    Share on Twitter
-  </a>
+	<ShareButton
+		text="Check out {rental.title} on Super Rentals!"
+		hashtags="vacation,travel,authentic,blessed,superrentals"
+		via="sveltejs"
+	>
+		Share on Twitter
+	</ShareButton>
 </Jumbo>
 
 <article class="rental detailed">
