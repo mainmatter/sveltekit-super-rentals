@@ -44,3 +44,9 @@
 - Add a new `.env` file with the Mapbox integration key
 - Update test to look for map element
 
+## Part 1.8: Working with data
+
+- Add seed data, in the form of JSON files, to the project
+- Add `@api` to the aliases in the `svelte.config.js`
+- Update the `index` route to load the data from the JSON file
+- Update the existing `Rental` component to receive the loaded data from the `index` route

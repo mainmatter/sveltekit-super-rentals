@@ -7,6 +7,7 @@ const config = {
 		adapter: adapter(),
 		// to make it easier to handle module imports, we alias them here
 		alias: {
+			'@api': path.resolve('./static/api'),
 			'@components': path.resolve('./src/components')
 		}
 	}

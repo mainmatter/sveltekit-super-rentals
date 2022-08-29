@@ -1,6 +1,8 @@
 <script>
   import Jumbo from '@components/jumbo.svelte';
 	import Rental from '@components/rental/index.svelte';
+
+	export let data;
 </script>
 
 <Jumbo>
@@ -11,8 +13,8 @@
 
 <div class="rentals">
 	<ul class="results">
-		<li><Rental /></li>
-		<li><Rental /></li>
-		<li><Rental /></li>
+		{#each data.rentals as rental}
+			<li><Rental {rental} /></li>
+		{/each}
 	</ul>
 </div>
