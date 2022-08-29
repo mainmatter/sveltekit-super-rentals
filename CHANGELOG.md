@@ -50,3 +50,10 @@
 - Add `@api` to the aliases in the `svelte.config.js`
 - Update the `index` route to load the data from the JSON file
 - Update the existing `Rental` component to receive the loaded data from the `index` route
+
+## Part 2.1: Route params
+
+- Add the `rentals/[slug]` route to display an individual rental
+- Update the `Map` component to accept a `styleClass`
+- Fetch the data for the specific rental inside the `rental/[slug]` route
+- Add tests to check the new functionality

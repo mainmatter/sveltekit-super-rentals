@@ -60,3 +60,31 @@ test('navigating using the nav-bar', async ({ page }) => {
 	await page.locator('h1:has-text("SuperRentals")').click();
 	await expect(page).toHaveURL('/');
 });
+
+test('viewing the details of a rental property', async ({ page }) => {
+	// Go to the index route
+	await page.goto('/');
+	// Assert there there 3 properties displayed
+	await expect(page.locator('.rental')).toHaveCount(3);
+
+	// Click on a rental
+	await page.locator('text=Grand Old Mansion').click();
+	// Assert it has taken you to the rental page
+	await expect(page).toHaveURL('/rentals/grand-old-mansion');
+});
+
+test('visiting /rentals/grand-old-mansion', async ({ page }) => {
+	// Go to the rental page
+	await page.goto('/rentals/grand-old-mansion');
+	// Assert we are on the current URL
+	await expect(page).toHaveURL('/rentals/grand-old-mansion');
+
+	// Assert the nav exists
+	await expect(page.locator('nav')).toBeVisible();
+	// Assert the main title is still correct
+	expect(await page.textContent('h1')).toBe('SuperRentals');
+	// Assert the page title has the correct text
+	expect(await page.textContent('h2')).toBe('Grand Old Mansion');
+	// Assert the rental detail area is visible
+	await expect(page.locator('.rental.detailed')).toBeVisible();
+});

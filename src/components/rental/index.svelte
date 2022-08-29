@@ -8,7 +8,11 @@
 <article class="rental">
 	<RentalImage src={rental.image} alt={rental.description} />
 	<div class="details">
-		<h3>{rental.title}</h3>
+		<h3>
+			<a href="rentals/{rental.id}">
+				{rental.title}
+			</a>
+		</h3>
 		<div class="detail owner">
 			<span>Owner:</span> {rental.owner}
 		</div>
