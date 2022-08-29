@@ -27,3 +27,9 @@
 - Add `@components` to the aliases in the `svelte.config.js`
 - Update the routes to use the `Jumbo` component
 - Add a new test to make sure the `nav-bar` component is functioning as expected
+
+## Part 1.5: More about components
+
+- Add the `rental/index` and `rental/image` components
+- Hardcode some data to showcase the new components (this will be populated from somewhere else in the future)
+
