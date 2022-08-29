@@ -1,5 +1,6 @@
 <script>
 	import RentalImage from './image.svelte';
+	import Map from '@components/map.svelte';
 </script>
 
 <article class="rental">
@@ -22,4 +23,12 @@
 			<span>Number of bedrooms:</span> 15
 		</div>
 	</div>
+	<Map
+		lat="37.7749"
+		lng="-122.4194"
+		zoom="9"
+		width="150"
+		height="150"
+		alt="A map of Grand Old Mansion"
+	/>
 </article>

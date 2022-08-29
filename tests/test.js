@@ -7,6 +7,8 @@ test('visiting /', async ({ page }) => {
 	expect(page).toHaveURL('/');
 	// assert the title of the page is correct
 	expect(await page.textContent('h2')).toBe('Welcome to Super Rentals!');
+	// assert the map images are visible
+	await expect(page.locator('.map img')).toHaveCount(3);
 	// assert the text on the link is correct
 	expect(await page.textContent('.jumbo a.button')).toBe('About Us');
 	// click on the link to take us to the `about` page

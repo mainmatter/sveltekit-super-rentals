@@ -37,3 +37,10 @@
 
 - Update the `Rental/Image` component to be interactive
 
+## Part 1.7: Reusable components
+
+- Create the new `Map` component
+- Add the Mapbox integration
+- Add a new `.env` file with the Mapbox integration key
+- Update test to look for map element
+
