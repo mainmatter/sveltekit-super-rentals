@@ -4,11 +4,11 @@
 </script>
 
 <script>
-	export let lat
-	export let lng
-	export let height
-	export let width
-	export let zoom
+	export let lat;
+	export let lng;
+	export let height;
+	export let width;
+	export let zoom;
 	export let alt = `Map image at coordinates ${lat},${lng}`;
 	export let styleClass = '';
 

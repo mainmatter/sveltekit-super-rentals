@@ -2,7 +2,7 @@
 	import RentalImage from './image.svelte';
 	import Map from '@components/map.svelte';
 
-	export let rental
+	export let rental;
 </script>
 
 <article class="rental">
@@ -14,16 +14,20 @@
 			</a>
 		</h3>
 		<div class="detail owner">
-			<span>Owner:</span> {rental.owner}
+			<span>Owner:</span>
+			{rental.owner}
 		</div>
 		<div class="detail type">
-			<span>Type:</span> {rental.type}
+			<span>Type:</span>
+			{rental.type}
 		</div>
 		<div class="detail location">
-			<span>Location:</span> {rental.city}
+			<span>Location:</span>
+			{rental.city}
 		</div>
 		<div class="detail bedrooms">
-			<span>Number of bedrooms:</span> {rental.bedrooms}
+			<span>Number of bedrooms:</span>
+			{rental.bedrooms}
 		</div>
 	</div>
 	<Map

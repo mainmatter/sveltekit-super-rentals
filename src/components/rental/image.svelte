@@ -4,9 +4,9 @@
 
 	let isLarge = false;
 
-  function onToggleSize() {
-    isLarge = !isLarge;
-  }
+	function onToggleSize() {
+		isLarge = !isLarge;
+	}
 </script>
 
 {#if isLarge}

@@ -3,9 +3,9 @@
 
 	const TWEET_INTENT = 'https://twitter.com/intent/tweet';
 
-	export let text
-	export let hashtags
-	export let via
+	export let text;
+	export let hashtags;
+	export let via;
 
 	let shareURL;
 

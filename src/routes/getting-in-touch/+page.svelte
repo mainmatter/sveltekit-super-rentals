@@ -1,5 +1,5 @@
 <script>
-	import Jumbo from '@components/jumbo.svelte'
+	import Jumbo from '@components/jumbo.svelte';
 </script>
 
 <Jumbo>
